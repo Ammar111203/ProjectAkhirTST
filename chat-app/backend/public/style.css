@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('https://static.wikia.nocookie.net/leagueoflegends/images/f/f7/Zaun_Life_Survives_In_The_Depth.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 2rem;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  width: 100%;
+}
+
+input[type="text"] {
+  width: 70%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 1rem;
+  backdrop-filter: blur(8px);
+  margin-right: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  background: #42a5f5;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #1e88e5;
+}
+
+.chat-box-container {
+  width: 100%;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 10px;
+  overflow-y: scroll;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-box {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  color: white;
+  font-size: 1rem;
+}
+
+.command-suggestions {
+  margin-top: 10px;
+  color: white;
+  font-size: 0.9rem;
+}
+
+input[type="text"]:focus, button:focus {
+  outline: none;
+}
+
+#nameInputContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#nameInputContainer input[type="text"] {
+  width: 200px;
+}
+
+#nameInputContainer button {
+  margin-top: 10px;
+}
+
+@media (max-width: 500px) {
+  .chat-container {
+    width: 90%;
+  }
+}
