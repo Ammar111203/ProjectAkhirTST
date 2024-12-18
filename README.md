@@ -11,7 +11,7 @@ Usecase yang kami ambil ada 3 yaitu
 2. Memberikan update status pemutaran lagu pada chat-app, jika user menjalankan musik lewat music-app
 3. Menampilkan list musik pada music-app dengan command di chat-app
 
-#Intalasi
+# Instalasi
 1. Siapkan 5 terminal CLI
 2. Masuk ke direktori project
 3. Pada terminal pertama ubah ke direktori music-app/backend lalu jalankan app.js dengan sintaks
