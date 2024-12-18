@@ -1,0 +1,59 @@
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:tns="http://localhost:8088/music"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns="http://schemas.xmlsoap.org/wsdl/"
+             targetNamespace="http://localhost:8088/music"
+             name="MusicService">
+
+  <types>
+    <xsd:schema targetNamespace="http://localhost:8088/music">
+      <xsd:element name="playMusicRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="songName" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="playMusicResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="message" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </types>
+
+  <message name="PlayMusicRequest">
+    <part name="parameters" element="tns:playMusicRequest"/>
+  </message>
+  <message name="PlayMusicResponse">
+    <part name="parameters" element="tns:playMusicResponse"/>
+  </message>
+
+  <portType name="MusicServicePortType">
+    <operation name="playMusic">
+      <input message="tns:PlayMusicRequest"/>
+      <output message="tns:PlayMusicResponse"/>
+    </operation>
+  </portType>
+
+  <binding name="MusicServiceBinding" type="tns:MusicServicePortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="playMusic">
+      <soap:operation soapAction="playMusic"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+
+  <service name="MusicService">
+    <port name="MusicServicePort" binding="tns:MusicServiceBinding">
+      <soap:address location="http://localhost:8088/musicService"/>
+    </port>
+  </service>
+</definitions>
